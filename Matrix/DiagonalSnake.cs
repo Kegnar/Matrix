@@ -5,10 +5,10 @@ public class DiagonalSnake
     public int Row{get;}
     public int Col{get;}
     int [,] _matrix;
-    public DiagonalSnake (int n, int m)
+    public DiagonalSnake (int row, int col)
     {
-        Row = n;
-        Col = m;
+        Row = row;
+        Col = col;
         _matrix = new int[Row, Col];
         int current = 1;
 
@@ -20,7 +20,7 @@ public class DiagonalSnake
                 int rowIdx = Math.Min(sum, Row - 1);
                 int colIdx = sum - rowIdx;
 
-                while (rowIdx >= 0 && colIdx < m)
+                while (rowIdx >= 0 && colIdx < col)
                 {
                     _matrix[rowIdx, colIdx] = current++;
                     rowIdx--;
